@@ -10,14 +10,14 @@ var Queue = function(){
   someInstance.last = 0;
   someInstance.first = 0;
   // Implement the methods below
-
+/*
   someInstance.enqueue = queueMethods.enqueue;
-
 
   someInstance.dequeue = queueMethods.dequeue;
 
   someInstance.size = queueMethods.size;
-
+*/
+  _.extend(someInstance, queueMethods);
   return someInstance;
 };
 
