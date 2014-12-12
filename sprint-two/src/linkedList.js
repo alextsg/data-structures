@@ -7,11 +7,11 @@ var LinkedList = function(){
   list.addToTail = function(value){
 
     if(this.head === null){
-      this.head = Node(value);
-      this.tail = this.head;
+      //this.head = Node(value);
+      this.tail = this.head = Node(value);
     }else{
-      this.tail.next = Node(value);
-      this.tail = this.tail.next;
+      //this.tail.next = Node(value);
+      this.tail = this.tail.next = Node(value);;
     }
   };
 
