@@ -16,7 +16,6 @@ var treeMethods = {};
 
 treeMethods.addChild = function(value){
   this.children.push(Tree(value));
-
 };
 
 treeMethods.contains = function(target){
@@ -24,12 +23,10 @@ treeMethods.contains = function(target){
   var drillDown = function(node){
     if(node.value === target){
       result = true;
-    }
-
-    if(node.children.length > 0){
-      for(var i = 0;i<node.children.length;i++){
-        drillDown(node.children[i]);
-      }
+    } else if(node.children.length > 0){
+      _.each(node.children, function(value){
+        drillDown(value);
+      });
     }
   };
   drillDown(this);

@@ -17,7 +17,7 @@ Graph.prototype.removeNode = function(node){
 };
 
 Graph.prototype.hasEdge = function(fromNode, toNode){
- return (this.nodes[fromNode].hasOwnProperty(toNode));
+ return (!!this.nodes[fromNode][toNode]);//.hasOwnProperty(toNode));
 };
 
 Graph.prototype.addEdge = function(fromNode, toNode){

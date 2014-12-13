@@ -6,31 +6,21 @@ var BinarySearchTree = function(value){
   newBST.right = null;
   newBST.left = null;
 
-
-
   return newBST;
-
-
 };
 
 var BSTMethods = {};
 
 BSTMethods.insert = function(value){
   var drillDown = function(BST){
-    if(BST.value === value){
+    if (BST.value === value){
       return null;
-    }else if(value > BST.value){
-      if(BST.right === null){
-        BST.right = BinarySearchTree(value);
-      } else {
-        drillDown(BST.right);
-      }
-    }else{
-      if(BST.left === null){
-        BST.left = BinarySearchTree(value);
-      } else {
-        drillDown(BST.left);
-      }
+    } else if (value > BST.value){
+      BST.right === null ? BST.right = BinarySearchTree(value) :
+      drillDown(BST.right);
+    } else {
+      BST.left === null ? BST.left = BinarySearchTree(value) :
+      drillDown(BST.left);
     }
   };
   drillDown(this);
@@ -56,7 +46,7 @@ BSTMethods.depthFirstLog = function(func){
     func(BST.value);
     if (BST.left){
       drillDown(BST.left);
-    };
+    }
     if (BST.right){
       drillDown(BST.right);
     }
