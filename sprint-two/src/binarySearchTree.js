@@ -54,6 +54,41 @@ BSTMethods.depthFirstLog = function(func){
   drillDown(this);
 };
 
+BSTMethods.breadthFirstLog = function(){
+
+  var nodes = [];
+  var results = [];
+  nodes.push(this);
+  var getPointers = function(BST){
+    if(BST.left){
+      nodes.push(BST.left);
+
+    }
+    if(BST.right){
+      nodes.push(BST.right);
+    }
+
+    if(BST.left){
+      getPointers(BST.left);
+    }
+
+    if(BST.right){
+      getPointers(BST.right);
+    }
+  };
+
+  getPointers(this);
+
+  for(var i = 0; i < nodes.length; i++){
+    results.push(nodes[i].value);
+  }
+
+  return results;
+
+  // shove the parent into a queue
+  // iterate through parent's children and shove them into the queue
+  // start left and right recursion and shove children into queue
+};
 
 
 /*

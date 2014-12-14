@@ -37,4 +37,18 @@ describe('binarySearchTree', function() {
     console.log(array);
     expect(array).to.eql([5,2,3]);
   });
+    it('should console.log each level', function(){
+    var array = [];
+
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(16);
+    binarySearchTree.insert(1);
+    binarySearchTree.insert(8);
+    binarySearchTree.insert(6);
+    binarySearchTree.insert(10);
+
+    array = binarySearchTree.breadthFirstLog();
+    console.log(array);
+    expect(array).to.eql([5,2,16,1,8,6,10]);
+  });
 });
